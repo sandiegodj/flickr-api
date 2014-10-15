@@ -1,0 +1,11 @@
+<%= form_tag(root_path, method: "get") do %>
+	<%= label_tag("Flickr ID") %>
+	<%= text_field_tag(:flickr_id) %>
+	<%= submit_tag("Submit") %>
+<% end %>
+
+<% if !@flickr_id.nil? %>
+	<% cache ("display") do %>
+		<%= render_flickr_sidebar_widget(@flickr_id) %>
+	<% end %>
+<% end %>

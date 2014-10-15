@@ -1,0 +1,10 @@
+<div class="flickr">
+  <ul>
+    <% photos.each do |p| %>
+      <li>
+      	<%= p.title %>
+      	<%= link_to image_tag("https://farm#{p.farm}.staticflickr.com/#{p.server}/#{p.id}_#{p.secret}_q.jpg"), "https://farm#{p.farm}.staticflickr.com/#{p.server}/#{p.id}_#{p.secret}_b.jpg" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
